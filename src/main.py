@@ -5,12 +5,38 @@ __author__ = 'soroush safari'
 
 
 import sys
+import re
 
 from radio import RadioJavan
 
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout
 from PyQt5.QtWidgets import QLabel, QLineEdit, QPushButton
 from functools import partial
+
+
+
+def action(url):
+	"""
+	call scraper
+	:param url: url song in www.radiojavan.com
+	"""
+	if url:
+		match = re.match(r"(https://www.radiojavan.com/mp3s)",url)
+		if match: 
+			radio_javan = RadioJavan(url=url)
+			if radio_javan.scrap():
+				final_url = radio_javan.scrap()
+				# TODO: add to label
+				pass
+			else:
+				# TODO: add to label
+				pass
+		else:
+			# TODO: add to label
+			pass
+	else:
+		# TODO: add to label
+		pass
 
 # Create an instance of QApplication
 app = QApplication(sys.argv)
@@ -32,6 +58,7 @@ url_input.move(100, 80)
 
 # button to start scrap url
 btn = QPushButton('find :)',parent=window)
+btn.clicked.connect(partial(action,url_input.text())) # when button press call action()
 btn.move(210, 140)
 
 # show result to this label
