@@ -24,5 +24,19 @@ window.setGeometry(500, 300, 500, 300) # set size window
 main_lbl = QLabel('Please enter url :', parent=window)
 main_lbl.move(100, 50)
 
+# input box
+url_input = QLineEdit(parent=window)
+url_input.setFixedWidth(300)
+url_input.setFixedHeight(40)
+url_input.move(100, 80)
+
+# button to start scrap url
+btn = QPushButton('find :)',parent=window)
+btn.move(210, 140)
+
+# show result to this label
+result_lbl = QLabel('',parent=window)
+result_lbl.move(100, 170)
+
 window.show() # show window
 sys.exit(app.exec_()) # keep alive app in mainloop
