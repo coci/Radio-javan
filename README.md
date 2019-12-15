@@ -17,7 +17,7 @@ pip install -r requirements.txt
 python3 main.py
 ````
 
-3. copy linke music and paste into box and click on find button
+3. copy link music and paste into box and click on find button
 4. after some time magic happen and download button appear .
 
 # contribute
