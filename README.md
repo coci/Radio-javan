@@ -1,5 +1,5 @@
 # Radio-javan
-gui application that download music from radio javan
+gui application that downloads music from radio javan
 
 
 
