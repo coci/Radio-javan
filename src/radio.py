@@ -15,6 +15,6 @@ class RadioJavan:
 		if media_content == "mp3":
 			host_url = session.get("https://www.radiojavan.com/mp3s/mp3_host/?id=%s" %(file_name))
 			final_url = str(json.loads(host_url.text)['host'])+"/media/mp3/"+file_name+".mp3"
-			return final_url
+			return final_url, file_name
 		else:
 			return None
